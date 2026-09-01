@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Briefcase, GraduationCap, Award, Code2, Layers, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, Code2, Layers, CheckCircle2, ChevronDown, ChevronUp, Download } from 'lucide-react';
 import ConicProgress from '@/components/ui/ConicProgress';
 
 const experienceData = [
@@ -209,13 +209,26 @@ export default function ResumeSection() {
     >
       <div className="space-y-12">
         {/* Section Header */}
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
-            Professional <span className="text-neutral-500">Resume & Experience</span>
-          </h2>
-          <p className="text-neutral-500 text-sm font-semibold uppercase tracking-wider mt-1">
-            10+ Years Enterprise History • Proven Architecture • Verified Leadership
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
+              Professional <span className="text-neutral-500">Resume & Experience</span>
+            </h2>
+            <p className="text-neutral-500 text-sm font-semibold uppercase tracking-wider mt-1">
+              10+ Years Enterprise History • Proven Architecture • Verified Leadership
+            </p>
+          </div>
+
+          <a
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/KhalidAhmed_Resume.pdf`}
+            download="KhalidAhmed_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="brutal-btn py-3 px-6 text-sm flex-shrink-0"
+          >
+            <span>Download Resume (PDF)</span>
+            <Download className="w-4 h-4" />
+          </a>
         </div>
 
         {/* 1. Complete Work Experience Timeline */}

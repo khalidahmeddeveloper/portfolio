@@ -53,10 +53,13 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="mailto:khalidahmed.developer@gmail.com"
+              href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/KhalidAhmed_Resume.pdf`}
+              download="KhalidAhmed_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="brutal-btn"
             >
-              <span>Contact / Resume</span>
+              <span>Download Resume (PDF)</span>
               <Download className="w-4 h-4" />
             </a>
 

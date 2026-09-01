@@ -75,7 +75,7 @@ export default function HeroSection() {
           <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[4/5] rounded-[30px] overflow-hidden border-4 border-black shadow-2xl bg-neutral-100 group">
             {/* Real Profile Image */}
             <Image
-              src="/images/ProfilePhoto.png"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/ProfilePhoto.png`}
               alt="Khalid Ahmed - Senior Full Stack .NET Developer"
               fill
               className="object-cover object-top transition-transform duration-700 group-hover:scale-105"

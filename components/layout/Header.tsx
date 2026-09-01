@@ -17,6 +17,8 @@ const navItems = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   return (
     <header className="relative z-30 mb-6" id="mainHeader">
       <div className="bg-white rounded-[30px] px-6 py-4 shadow-sm border border-neutral-100 flex items-center justify-between">
@@ -24,7 +26,7 @@ export default function Header() {
         <Link href="#home" className="flex items-center gap-3 group">
           <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-black flex-shrink-0 relative">
             <Image
-              src="/images/ProfilePhoto.png"
+              src={`${basePath}/images/ProfilePhoto.png`}
               alt="Khalid Ahmed Profile"
               fill
               className="object-cover"

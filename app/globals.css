@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #EDF0F4;
+  --side-menu-color: #000000;
+  --section-background: #FFFFFF;
+  --card-background: #FFFFFF;
+  --main-text: #000000;
+  --sub-text: #838485;
+  --btn-border: #000000;
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-space-grotesk), sans-serif;
+  background-color: var(--primary-color);
+  color: var(--main-text);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0F141C;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 3px;
+}
+
+/* Neo-Brutalist Asymmetric Button */
+.brutal-btn {
+  color: var(--btn-border);
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 20px;
+  border-top: 2px solid var(--btn-border);
+  border-right: 4px solid var(--btn-border);
+  border-bottom: 4px solid var(--btn-border);
+  border-left: 2px solid var(--btn-border);
+  padding: 12px 24px;
+  background-color: transparent;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brutal-btn:hover {
+  background-color: var(--main-text);
+  color: #FFFFFF;
+  border-radius: 0px;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.brutal-btn-dark {
+  color: #FFFFFF;
+  background-color: #000000;
+  border: 2px solid #000000;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+.brutal-btn-dark:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-radius: 0px;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Dashed Hover-Morph Card */
+.brutal-card {
+  border: 2px dashed #CBD5E1;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.brutal-card:hover {
+  border: 2px dashed #000000;
+  border-radius: 0px;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Floating Input Badges */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 2px dashed #CBD5E1;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border: 2px dashed #000000;
+  border-radius: 0px;
+  background-color: #FFFFFF;
+}
+
+.input-badge {
+  color: #000000;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 12px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: -11px;
+  left: 20px;
+  z-index: 10;
+}
+
+/* Timeline custom style */
+.timeline-ring {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+/* Pulse animation for back to top button */
+@keyframes brutal-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-brutal-pulse:hover {
+  animation: brutal-pulse 1.5s infinite;
+}
